@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark min-h-screen">
+    <div class="blockchain-animation" id="blockchain-canvas"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-10 px-4 py-2">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="font-mono text-xl">
+                <span class="gradient-text font-bold">0x</span><span class="accent-text">Portfolio</span>
+            </div>
+            <div class="flex space-x-2 md:space-x-6">
+                <a href="#about" class="px-2 py-1 hover:text-purple-300 transition-colors">About</a>
+                <a href="#projects" class="px-2 py-1 hover:text-purple-300 transition-colors">Projects</a>
+                <a href="#skills" class="px-2 py-1 hover:text-purple-300 transition-colors">Skills</a>
+                <a href="#contact" class="px-2 py-1 hover:text-purple-300 transition-colors">Contact</a>
+                <button id="snoopy-toggle" class="px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-comments mr-1"></i> Snoopy
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 py-24 z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <p class="text-sm md:text-base uppercase tracking-widest mb-3 accent-text font-mono">Blockchain Developer</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-mono typewriter">
+                        <span class="gradient-text">John Doe</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-md">Building the decentralized future with innovative Web3 solutions and blockchain technology.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full hover:opacity-90 transition-opacity">View Projects</a>
+                        <a href="#contact" class="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-60 h-60 md:w-80 md:h-80">
+                        <div class="absolute inset-0 hexagon bg-gradient-to-br from-purple-600 to-pink-500 opacity-25 animate-pulse"></div>
+                        <div class="absolute inset-2 hexagon bg-[#0F0F1A] flex items-center justify-center">
+                            <img src="assets/images/profile.jpg" alt="Profile" class="w-40 h-40 md:w-60 md:h-60 rounded-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            <div class="glass-card rounded-xl p-6 md:p-8 max-w-4xl mx-auto">
+                <p class="mb-4">Hi, I'm a passionate blockchain developer with extensive experience in Web3 technologies. I specialize in building decentralized applications (dApps) and smart contracts that leverage the power of blockchain to create transparent, secure, and efficient solutions.</p>
+                
+                <p class="mb-4">My journey in the blockchain space began in 2017 when I first discovered Ethereum and its revolutionary smart contract platform. Since then, I've been deeply immersed in the ecosystem, working with various protocols like Solana, Polkadot, and Layer 2 scaling solutions.</p>
+                
+                <p>I'm particularly interested in DeFi (Decentralized Finance), NFTs, and DAOs, believing they represent the future of financial systems and digital ownership. When I'm not coding, I'm attending hackathons, contributing to open-source projects, or writing technical content to help newcomers navigate the blockchain space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">Projects</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-transform hover:scale-[1.02]">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-exchange-alt text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">DeFi Exchange</h3>
+                            <div class="node w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <p class="text-sm mb-4">A decentralized exchange platform with automated market making and liquidity pools. Built with Solidity and React.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Ethereum</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Solidity</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">React</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-transform hover:scale-[1.02]">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-paint-brush text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">NFT Marketplace</h3>
+                            <div class="node w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <p class="text-sm mb-4">A platform for creating, buying, and selling NFTs with royalty splits and on-chain provenance verification.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Solana</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Rust</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-transform hover:scale-[1.02]">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-green-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-users text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold">DAO Governance</h3>
+                            <div class="node w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <p class="text-sm mb-4">A decentralized autonomous organization framework with on-chain voting, proposal creation, and treasury management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Polygon</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Solidity</span>
+                            <span class="text-xs py-1 px-2 rounded-full bg-white/10">Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-b from-transparent to-[rgba(93,92,222,0.1)]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">Skills & Expertise</span>
+            </h2>
+            <div class="glass-card rounded-xl p-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fab fa-ethereum text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Blockchain</h3>
+                        <p class="text-sm text-white/80">Ethereum, Solana, Polkadot, Layer 2 Solutions</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Smart Contracts</h3>
+                        <p class="text-sm text-white/80">Solidity, Rust, Vyper, Web3.js, Ethers.js</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-laptop-code text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Frontend</h3>
+                        <p class="text-sm text-white/80">React, Vue.js, Next.js, TailwindCSS</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-server text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Backend</h3>
+                        <p class="text-sm text-white/80">Node.js, GraphQL, The Graph, IPFS</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Security</h3>
+                        <p class="text-sm text-white/80">Smart Contract Auditing, DeFi Security, Tools</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-3 flex justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-project-diagram text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Protocols</h3>
+                        <p class="text-sm text-white/80">DeFi, NFTs, DAOs, Cross-chain Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="gradient-text">Get In Touch</span>
+            </h2>
+            <div class="glass-card rounded-xl p-8 max-w-xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block mb-2 text-sm font-medium">Name</label>
+                        <input type="text" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-base" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium">Email</label>
+                        <input type="email" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-base" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-base" placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button type="button" class="w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg hover:opacity-90 transition-opacity text-white font-medium">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="font-mono text-xl">
+                        <span class="gradient-text font-bold">0x</span><span class="accent-text">Portfolio</span>
+                    </div>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-lg hover:text-purple-400 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-lg hover:text-purple-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-lg hover:text-purple-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-lg hover:text-purple-400 transition-colors"><i class="fab fa-discord"></i></a>
+                </div>
+                <div class="mt-4 md:mt-0 text-sm text-white/60">
+                    &copy; 2023 John Doe. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snoopy Chat Interface -->
+    <div id="snoopy-chat" class="fixed bottom-0 right-0 w-full md:w-96 h-[500px] transform translate-y-full transition-transform duration-300 z-20 flex flex-col">
+        <div class="bg-gradient-to-r from-purple-600 to-pink-500 p-4 rounded-t-xl flex items-center justify-between cursor-pointer" id="snoopy-header">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                    <i class="fas fa-dog"></i>
+                </div>
+                <h3 class="font-bold">Snoopy AI Assistant</h3>
+            </div>
+            <button id="snoopy-minimize" class="text-white/80 hover:text-white">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <div class="flex-1 bg-[#12121E] border-l border-r border-white/10 p-4 overflow-y-auto" id="chat-messages">
+            <div class="bot-message chat-message">
+                <p>Hi there! I'm Snoopy, John's personal AI assistant. How can I help you learn more about John and his blockchain expertise?</p>
+            </div>
+        </div>
+        <div class="p-4 border-t border-white/10 bg-[#12121E] rounded-b-xl">
+            <div id="voice-indicator" class="hidden mb-2">
+                <div class="recording-wave">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="text-xs text-white/60 ml-2">Listening...</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button id="voice-button" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-white/10 transition-colors">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <input type="text" id="chat-input" class="flex-1 py-2 px-4 bg-white/5 border border-white/10 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-base" placeholder="Ask Snoopy anything...">
+                <button id="send-button" class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center text-white">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/blockchain.js"></script>
+    <script src="js/snoopy.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

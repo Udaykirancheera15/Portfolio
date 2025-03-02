@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #5D5CDE;
+    --secondary: #FF5CAD;
+    --accent: #23F0C7;
+    --bg-light: #FFFFFF;
+    --bg-dark: #0F0F1A;
+    --text-light: #F5F5FF;
+    --text-dark: #1A1A2E;
+    --card-light: #F0F0FF;
+    --card-dark: #1A1A2E;
+}
+
+.dark {
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-light);
+    --card-color: var(--card-dark);
+}
+
+.light {
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-dark);
+    --card-color: var(--card-light);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.font-mono {
+    font-family: 'Space Mono', monospace;
+}
+
+.gradient-bg {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.accent-text {
+    color: var(--accent);
+}
+
+.hero-bg {
+    background: radial-gradient(circle at 10% 20%, rgba(93, 92, 222, 0.2) 0%, rgba(35, 240, 199, 0.1) 90%);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Glowing effect for blockchain nodes */
+.node {
+    box-shadow: 0 0 15px var(--primary);
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px var(--primary);
+    }
+    100% {
+        box-shadow: 0 0 25px var(--primary), 0 0 40px var(--secondary);
+    }
+}
+
+/* Snoopy Chat Styles */
+.chat-message {
+    border-radius: 18px;
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    position: relative;
+}
+
+.user-message {
+    background: linear-gradient(to right, var(--primary), #7978E9);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+}
+
+/* Voice recording animation */
+.recording-wave {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.recording-wave span {
+    display: inline-block;
+    width: 3px;
+    height: 100%;
+    margin: 0 2px;
+    background-color: var(--accent);
+    border-radius: 3px;
+    animation: wave 1s infinite ease-in-out;
+}
+
+.recording-wave span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.recording-wave span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.recording-wave span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.recording-wave span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        height: 4px;
+    }
+    50% {
+        height: 16px;
+    }
+}
+
+/* Blockchain animation */
+.blockchain-animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+    overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+/* Typewriter effect */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
